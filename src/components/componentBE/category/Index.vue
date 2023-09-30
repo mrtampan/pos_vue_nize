@@ -1,13 +1,13 @@
 <template>
-  <TableCategory />
+  <CategoryTable />
 </template>
 
 <script>
-import TableCategory from "./CategoryTable.vue";
+import CategoryTable from "./CategoryTable.vue";
 export default {
-  name: "productIndex",
+  name: "categoryIndex",
   components: {
-    TableCategory,
+    CategoryTable,
   },
 };
 </script>

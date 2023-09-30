@@ -9,7 +9,8 @@
             class="form-control"
             placeholder="Search"
             aria-label="Cari"
-            aria-describedby="basic-addon1" />
+            aria-describedby="basic-addon1"
+          />
           <div class="input-group-prepend">
             <span
               @click="loadData"
@@ -49,7 +50,8 @@
             </div>
             <div class="col-lg-6 text-end">
               <router-link to="/admin/product/create" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Create
+                <i class="bi bi-plus-circle"></i>
+                <span class="ms-2">Create</span>
               </router-link>
             </div>
           </div>
@@ -91,7 +93,8 @@
                 <tr
                   class="col-md-4 mt-4"
                   v-for="(product, index) in products"
-                  :key="product.id">
+                  :key="product.id"
+                >
                   <td>{{ calculateProductId(index) }}</td>
                   <td>{{ product.name }}</td>
                   <td>{{ product.kode }}</td>
@@ -103,7 +106,8 @@
                     <img
                       :src="getProductImageUrl(product.image)"
                       alt="Product Image"
-                      style="max-width: 100px; max-height: 100px" />
+                      style="max-width: 100px; max-height: 100px"
+                    />
                   </td>
 
                   <td>
@@ -115,7 +119,8 @@
 
                     <button
                       class="btn btn-danger mx-2"
-                      @click="deleteProduct(product.id)">
+                      @click="deleteProduct(product.id)"
+                    >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
@@ -139,19 +144,22 @@
               class="page-item"
               v-for="(paginate, index) in link"
               :key="index"
-              :class="{ active: paginate.active }">
+              :class="{ active: paginate.active }"
+            >
               <!-- Hanya tampilkan label yang berupa angka -->
               <a
                 class="page-link"
                 @click="filter(paginate.label)"
                 v-if="paginate.label.match(/^\d+$/)"
-                href="#">
+                href="#"
+              >
                 {{ paginate.label }}
               </a>
             </li>
             <li
               class="page-item"
-              :class="{ disabled: currentPage === totalPages }">
+              :class="{ disabled: currentPage === totalPages }"
+            >
               <a class="page-link" @click="filter(currentPage + 1)" href="#">
                 Selanjutnya
               </a>

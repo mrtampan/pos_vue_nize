@@ -1,13 +1,13 @@
 <template>
-  <TableProduct />
+  <ProductTable />
 </template>
 
 <script>
-import TableProduct from "./ProductTable.vue";
+import ProductTable from "./ProductTable.vue";
 export default {
   name: "productIndex",
   components: {
-    TableProduct,
+    ProductTable,
   },
 };
 </script>

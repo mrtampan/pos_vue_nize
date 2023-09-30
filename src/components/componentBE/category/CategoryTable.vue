@@ -9,7 +9,8 @@
             class="form-control"
             placeholder="Search"
             aria-label="Cari"
-            aria-describedby="basic-addon1" />
+            aria-describedby="basic-addon1"
+          />
           <div class="input-group-prepend">
             <span
               @click="loadData"
@@ -41,7 +42,8 @@
             </div>
             <div class="col-lg-6 text-end">
               <router-link to="/admin/category/create" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Create
+                <i class="bi bi-plus-circle"></i>
+                <span class="ms-2">Create</span>
               </router-link>
             </div>
           </div>
@@ -65,7 +67,8 @@
                 <tr
                   class="col-md-4 mt-4"
                   v-for="(category, index) in categories"
-                  :key="category.id">
+                  :key="category.id"
+                >
                   <td>{{ calculatecategoryId(index) }}</td>
                   <td>{{ category.name }}</td>
 
@@ -78,7 +81,8 @@
 
                     <button
                       class="btn btn-danger mx-2"
-                      @click="deletecategory(category.id)">
+                      @click="deletecategory(category.id)"
+                    >
                       <i class="bi bi-trash3"></i>
                     </button>
                   </td>
@@ -102,19 +106,22 @@
               class="page-item"
               v-for="(paginate, index) in link"
               :key="index"
-              :class="{ active: paginate.active }">
+              :class="{ active: paginate.active }"
+            >
               <!-- Hanya tampilkan label yang berupa angka -->
               <a
                 class="page-link"
                 @click="filter(paginate.label)"
                 v-if="paginate.label.match(/^\d+$/)"
-                href="#">
+                href="#"
+              >
                 {{ paginate.label }}
               </a>
             </li>
             <li
               class="page-item"
-              :class="{ disabled: currentPage === totalPages }">
+              :class="{ disabled: currentPage === totalPages }"
+            >
               <a class="page-link" @click="filter(currentPage + 1)" href="#">
                 Selanjutnya
               </a>
